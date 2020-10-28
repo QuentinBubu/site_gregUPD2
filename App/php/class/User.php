@@ -10,7 +10,7 @@ class User extends Database
 {
     private $informations;
 
-    private function setConnexion($userName, $password)
+    private function setConnexion(string $userName, string $password)
     {
         $tempData = $this->request(
             'SELECT *
@@ -34,7 +34,7 @@ class User extends Database
         }
     }
 
-    private function setConnexionById($id)
+    private function setConnexionById(int $id)
     {
         $this->informations = $this->request(
             'SELECT *
@@ -158,7 +158,25 @@ class User extends Database
         );
     }
 
-    private function passwordVerify($password, $passwordConfirm)
+    private function setUpdatePassword(string $password, string $passwordConfirm, string $mail)
+    {
+        password_verify($password, $passwordConfirm);
+        $this->request(
+            'UPDATE `users`
+            SET `password` = :pass
+            WHERE `mail` = :mail',
+            [
+                'pass' => password_hash($password, PASSWORD_ARGON2ID),
+                'mail' => $mail
+            ]
+        );
+        $this->request(
+            'UPDATE `users`
+            SET `token` = null'
+        );
+    }
+
+    private function passwordVerify(string $password, string $passwordConfirm) : bool
     {
         if ($password !== $passwordConfirm) {
             throw new Exception('Erreur: Les mots de passes ne correspondent pas!');
@@ -167,6 +185,8 @@ class User extends Database
         if(strlen($password) < 10 ) {
             throw new Exception('Erreur: Veuillez saisir un mot de passe avec plus de 10 caractères!');
         }
+
+        return True;
     }
 
     public function getConnexion($userName, $password)
@@ -204,5 +224,10 @@ class User extends Database
     public function getAccountType()
     {
         return $this->informations['accountType'];
+    }
+
+    public function getUpdatePassword(string $password, string $passwordConfirm, string $mail)
+    {
+        $this->setUpdatePassword($password, $passwordConfirm, $mail);
     }
 }

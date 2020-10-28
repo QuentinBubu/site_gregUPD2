@@ -33,7 +33,7 @@ class Database
         $this->pdo = $pdo;
     }
 
-    public function request($request, $values = '', $type = '')
+    public function request(string $request, array $values = [], string $type = '')
     {
         try{
             $request = $this->pdo->prepare($request);
