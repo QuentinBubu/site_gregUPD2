@@ -22,4 +22,3 @@ if (isset($_POST['mail'])) {
         mail();
     }
 }
-echo 'hello';
