@@ -1,0 +1,17 @@
+{
+    "name": "quentin/site-greg-upd2",
+    "description": "Version 2 of the greg's web site",
+    "type": "composer-laravel-tailwindcss",
+    "authors": [{
+        "name": "Quentin Bubu",
+        "email": "anagamesprint@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/php/class/"
+        }
+    },
+    "require": {
+        "altorouter/altorouter": "^2.0"
+    }
+}
