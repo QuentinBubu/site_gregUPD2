@@ -1,5 +1,5 @@
 User-Agent:*
-Disallow: /gestionnaire-d-erreures/404.html
-Disallow: /gestionnaire-d-erreures/500.html
-Disallow: /gestionnaire-d-erreures/503.html
-Disallow: /gestionnaire-d-erreures/504.html
+Disallow: /public/assets/errorPage/404.html
+Disallow: /public/assets/errorPage/500.html
+Disallow: /public/assets/errorPage/503.html
+Disallow: /public/assets/errorPage/504.html
