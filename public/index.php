@@ -12,6 +12,7 @@ $router->map('POST', '/espace-admin', 'admin');
 $router->map('GET', '/logout', 'logout');
 $router->map('POST', '/password-forget', 'password-forget');
 $router->map('GET', '/password', 'reset-password');
+$router->map('POST', '/reset-password', 'reset-password');
 
 $results = $router->match();
 if ($results != null) {

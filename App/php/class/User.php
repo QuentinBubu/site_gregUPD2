@@ -158,18 +158,20 @@ class User extends Database
         );
     }
 
-    private function setUpdatePassword(string $password, string $passwordConfirm, string $mail)
+    private function setUpdatePassword(string $password, string $passwordConfirm, string $token)
     {
         password_verify($password, $passwordConfirm);
+
         $this->request(
             'UPDATE `users`
             SET `password` = :pass
-            WHERE `mail` = :mail',
+            WHERE `token` = :token',
             [
                 'pass' => password_hash($password, PASSWORD_ARGON2ID),
-                'mail' => $mail
+                'token' => $token
             ]
         );
+
         $this->request(
             'UPDATE `users`
             SET `token` = null'
@@ -185,7 +187,7 @@ class User extends Database
         if(strlen($password) < 10 ) {
             throw new Exception('Erreur: Veuillez saisir un mot de passe avec plus de 10 caractères!');
         }
-
+        
         return True;
     }
 
@@ -226,8 +228,8 @@ class User extends Database
         return $this->informations['accountType'];
     }
 
-    public function getUpdatePassword(string $password, string $passwordConfirm, string $mail)
+    public function getUpdatePassword(string $password, string $passwordConfirm, string $token)
     {
-        $this->setUpdatePassword($password, $passwordConfirm, $mail);
+        $this->setUpdatePassword($password, $passwordConfirm, $token);
     }
 }
