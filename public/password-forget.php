@@ -7,12 +7,18 @@ $user = new User;
 $token = bin2hex(random_bytes(random_int(15, 50)));
 
 $header  = 'MIME-Version: 1.0' . "\r\n";
-$header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+$header .= 'Content-type: text/html; charset=ISO-8859' . "\r\n";
 $header .= "From: support@site_greg.com\r\n";
-$message = "<h1>Support</h1>
-            <h3>Mot de passe oublié?</h3>
-            Voici votre lien pour réinitialiser votre mot de passe:
-            <a href=\"localhost:3000/password?token={$token}\">ici</a> ou copiez collez ce lien: localhost:3000/password?token={$token}";
+$message = '<html><head>';
+$message .= '<meta charset="utf-8" />';
+$message .= '<title>Support - réinitialiser votre mot de passe</title>';
+$message .= '</head><body>';
+$message .= '<h1>Support - site greg</h1>';
+$message .= '<h3>Mot de passe oublié?</h3>';
+$message .= '<p>Vous avez demander à réinitialiser votre mot de passe?</p>';
+$message .= '<p>Voici votre lien pour le réinitialiser: <br />';
+$message .= '<a href="localhost:3000/password?token=' . $token . '">En cliquant ici</a><br /> ou copiez collez ce lien:<br />localhost:3000/password?token=' . $token . '</p>';
+$message .= '</body></html>';
 
 if (isset($_POST['mail'])) {
     $selectUser = $user->request(
