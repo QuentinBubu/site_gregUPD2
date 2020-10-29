@@ -45,11 +45,13 @@ if ($userExist[0] == 0) {
 
 <form method="post" action="reset-password">
     <label>
-        <input type="password" name="password">
+        <input type="password" name="password" placeholder="Saisissez un nouveau mot de passe">
     </label>
+    <br />
     <label>
-        <input type="password" name="passwordConfirm">
+        <input type="password" name="passwordConfirm" placeholder="Confirmez votre nouveau mot de passe">
     </label>
     <input type="hidden" name="token" value="<?= $_GET['token'] ?>">
+    <br />
     <button>Enregistrer</button>
 </form>
