@@ -187,7 +187,7 @@ class User extends Database
         if(strlen($password) < 10 ) {
             throw new Exception('Erreur: Veuillez saisir un mot de passe avec plus de 10 caractères!');
         }
-        
+
         return True;
     }
 
