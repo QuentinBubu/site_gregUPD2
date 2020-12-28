@@ -65,7 +65,7 @@ $categorieFour = $database->request(
                     Je suis autoentrepreneur et aime mon travail<br />
                     Vous pouvez me demander des services sur mesures<br />
                     Vous trouverez ci dessous quelques une de mes créations<br />
-                    Vous pourrez également appuyer sur le bouton "lancer la diapositive" pour avoir une diapositive de mes créations!
+                    Vous pourrez également appuyer <a id="startDiapo" class="underline">ici</a> pour avoir une diapositive de mes créations!
                 </div>
             </section>
             <hr />
@@ -130,7 +130,8 @@ $categorieFour = $database->request(
                     <p>Pour me contacter par mail: <a href="mailto:savoyegregory@yahoo.fr" class="underline">savoyegregory@yahoo.fr</a></p>
                     <p>Pour me contacter par télephone: <a href="tel:+33770507568" class="underline">+33770507568</a></p>
                     <p>Mon adresse: 2b résidence Alfred de Musset, 26100 Romans-sur-Isère</p>
-                    <a href="https://goo.gl/maps/uBti6oP8AmMEUG267" class="underline" target="_blank">Je m'y rend</a>
+                    <p><a href="https://goo.gl/maps/uBti6oP8AmMEUG267" class="underline" target="_blank">Je m'y rend</a></p>
+                    <label for="maps">Carte:</label>
                     <span id="iframeLocation"></span>
                 </article>
             </section>

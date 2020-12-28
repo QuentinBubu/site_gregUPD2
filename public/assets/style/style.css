@@ -21,6 +21,7 @@ hr {
 
 .underline {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .top_bar {
@@ -135,6 +136,7 @@ hr {
 
 .number {
     border: none;
+    outline: transparent;
     cursor: pointer;
 }
 
@@ -149,6 +151,7 @@ hr {
     transform: translateY(-50%);
     top: 50%;
     border: none;
+    outline: transparent;
 }
 
 .precedent {

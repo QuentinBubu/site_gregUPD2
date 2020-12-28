@@ -69,11 +69,13 @@ function affichage(n) {
 function checkTime() {
     counter++;
     if (counter >= timeout) {
-        diapo.style.display = "block";
-        document.body.style.overflow = "hidden";
-        counter = 0;
+        demarrageDiapo();
     }
 }
 
-//Affichage de la diapositive
-affichage(diaporama);
+function demarrageDiapo() {
+    diapo.style.display = "block";
+    document.body.style.overflow = "hidden";
+    counter = 0;
+    affichage(1);
+}
