@@ -2,10 +2,3 @@ ErrorDocument 404 /gestionnaire-d-erreures/404.html
 ErrorDocument 500 /gestionnaire-d-erreures/500.html
 ErrorDocument 504 /gestionnaire-d-erreures/503.html
 ErrorDocument 504 /gestionnaire-d-erreures/504.html
-<Files infos-conex.php maj-aff-ann.php moderateur.php supprimer_annonces.php supprimer_fichier.php add_annonces_trait.php add_file.php affichage-contenu.php c.php ajouter_annonces.php import_fichier.php creacode.php del_annonces.php del_image.php existebdd.php >
-Order allow,deny
-Deny from all
-</Files>
-# HTID:6380193: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
-php_value display_errors 1
-# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:6380193:
