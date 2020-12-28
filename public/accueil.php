@@ -2,7 +2,7 @@
 
 use App\Database;
 
-$database = new Database;
+$database = new Database();
 
 $categorieOne = $database->request(
     'SELECT *
@@ -53,7 +53,7 @@ $categorieFour = $database->request(
                             </ul>
                         </nav>
                     </li>
-                    <li>Mon super site!</li>
+                    <li>SGMC 26</li>
                     <li><a href="#contact">Me contacter</a></li>
                 </ul>
             </nav>
@@ -126,11 +126,12 @@ $categorieFour = $database->request(
             <hr />
             <section id="contact">
                 <article>
-                    <h2>Me contacter/Me trouver</h2>
-                    <p>Pour me contacter par mail: <a href="mailto:contact@example.com">contatct@example.com</a></p>
-                    <p>Pour me contacter par télephone: <a href="tel:+33612345678">+33612345678</a></p>
-                    <p>Mon adresse: Avenue des Champs-Élysées, Paris</p>
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.392419294328!2d2.305631715629927!3d48.869795279288574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc4f8007851%3A0x5aa1a787f38f64f6!2sAv.%20des%20Champs-%C3%89lys%C3%A9es%2C%2075008%20Paris!5e0!3m2!1sfr!2sfr!4v1597225903405!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+                    <h2>Me contacter / Me trouver</h2>
+                    <p>Pour me contacter par mail: <a href="mailto:savoyegregory@yahoo.fr" class="underline">savoyegregory@yahoo.fr</a></p>
+                    <p>Pour me contacter par télephone: <a href="tel:+33770507568" class="underline">+33770507568</a></p>
+                    <p>Mon adresse: 2b résidence Alfred de Musset, 26100 Romans-sur-Isère</p>
+                    <a href="https://goo.gl/maps/uBti6oP8AmMEUG267" class="underline" target="_blank">Je m'y rend</a>
+                    <span id="iframeLocation"></span>
                 </article>
             </section>
             <hr />
@@ -139,8 +140,10 @@ $categorieFour = $database->request(
                 <h1>Espace Administrateur</h1>
                 <div>
                     <form action="espace-admin" method="post">
-                        <input type="text" placeholder="Votre Identifiant" name="id" />
+                        <label for="id">Identifiant:</label>
+                        <input type="text" placeholder="Votre Identifiant" name="id" id="id" />
                         <br />
+                        <label for="pswd">Mot de passe:</label>
                         <input type="password" placeholder="Votre mot de passe" name="pswd" id="pswd" />
                         <br />
                         <button>Se connecter</button>
@@ -152,7 +155,8 @@ $categorieFour = $database->request(
                 <div>
                     <h2>Mot de passe oublié?</h2>
                     <form action="password-forget" method="post">
-                        <input type="email" name="mail" placeholder="Votre email" />
+                        <label for="mail">Votre mail</label>
+                        <input type="email" name="mail" id="mail" placeholder="Votre email" />
                         <br />
                         <button>Envoyer un mail</button>
                     </form>
@@ -201,7 +205,7 @@ $categorieFour = $database->request(
                 <button class="number">5</button>
                 <button class="number">6</button>
             </div>
-            <span id="enter">Appuyer sur "Entrée" pour fermer</span>
+            <span id="enter">Appuyez sur "Entrée" pour fermer</span>
             <span id="cross">X</span>
             </article>
         </section>

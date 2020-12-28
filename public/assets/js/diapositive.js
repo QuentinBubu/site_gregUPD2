@@ -1,16 +1,14 @@
-//Déclaration des variables dans le scrope global
-const diapo = document.getElementById("diapo");
-const cross = document.getElementById("cross");
-const diapoImg = document.getElementsByClassName("diapo");
-const indic = document.getElementsByClassName("number");
-const timeout = 10; //secondes
+const diapo = document.querySelector("#diapo");
+const cross = document.querySelector("#cross");
+const diapoImg = document.querySelectorAll(".diapo");
+const indic = document.querySelectorAll(".number");
+const timeout = 60; //secondes
 let diaporama = 1;
 let counter = 0;
 
-//Définition des événement
 cross.addEventListener("click", function() {
     diapo.style.display = "none";
-    body.style.overflow = "auto";
+    document.body.style.overflow = "auto";
 }, false);
 
 for (let i = 0; i < indic.length; i++) {
@@ -21,7 +19,7 @@ for (let i = 0; i < indic.length; i++) {
 window.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         diapo.style.display = "none";
-        body.style.overflow = "auto";
+        document.body.style.overflow = "auto";
     }
 });
 
@@ -72,7 +70,7 @@ function checkTime() {
     counter++;
     if (counter >= timeout) {
         diapo.style.display = "block";
-        body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
         counter = 0;
     }
 }
