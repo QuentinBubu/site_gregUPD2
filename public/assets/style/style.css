@@ -322,10 +322,6 @@ hr {
     .annonces>div>p {
         border-bottom: 2px dashed gray;
     }
-    #admin-space>div>form>*:hover,
-    #admin-space>div>form>*:focus {
-        font-size: 1.2rem;
-    }
     #diapo {
         width: 100vh;
         height: 100vw;
